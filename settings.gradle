@@ -12,8 +12,8 @@ rootProject.name = 'spring-security'
 //include 'spring-sso:resource-server'
 ////-----------------------------------
 //
-//include 'auth:api-basic'
-//include 'auth:web-basic'
+include 'auth:api-basic'
+include 'auth:web-basic'
 //
 //include 'auth:api-digest'
 //
