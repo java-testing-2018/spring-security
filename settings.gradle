@@ -5,12 +5,12 @@ rootProject.name = 'spring-security'
 //include 'google-sso:spring-boot-google-code-enable-sso'
 //include 'google-sso:spring-boot-google-client-credentials'
 //
-////-----------------------------------
-//include 'spring-sso:auth-server'
-//include 'spring-sso:auth-server-jwt'
-//
-//include 'spring-sso:resource-server'
-////-----------------------------------
+//-----------------------------------
+include 'spring-sso:auth-server'
+include 'spring-sso:auth-server-jwt'
+
+include 'spring-sso:resource-server'
+//-----------------------------------
 //
 //include 'auth:api-basic'
 //include 'auth:web-basic'
