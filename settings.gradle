@@ -14,8 +14,8 @@ rootProject.name = 'spring-security'
 //
 include 'auth:api-basic'
 include 'auth:web-basic'
-//
-//include 'auth:api-digest'
+
+include 'auth:api-digest'
 //
 //include 'auth:web-x509'
 //
