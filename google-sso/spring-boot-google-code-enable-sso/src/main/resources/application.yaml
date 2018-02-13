@@ -1,0 +1,19 @@
+security:
+  oauth2:
+    resource:
+      user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+      prefer-token-info: true
+    client:
+      client-id: 647050875379-f9vnj8qs2c4vjjvo75u2uambdvrqodr3.apps.googleusercontent.com
+      client-secret: A-tw0u9WJxwHTBW4v6t-41Qf
+      authentication-scheme: form
+
+      user-authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
+      access-token-uri: https://www.googleapis.com/oauth2/v4/token
+      scope: profile, https://www.googleapis.com/auth/drive.readonly.metadata
+#      auto-approve-scopes: '.*'
+      grant-type: authorization_code
+
+logging:
+  level:
+    org.springframework.security: DEBUG

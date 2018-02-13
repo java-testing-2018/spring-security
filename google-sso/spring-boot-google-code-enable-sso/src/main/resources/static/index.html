@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Demo</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width"/>
+    <base href="/"/>
+    <link rel="stylesheet" type="text/css"
+          href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1>Login</h1>
+<div class="container unauthenticated">
+    <div>
+        Login with Google account: <a href="/login">click here</a>
+    </div>
+</div>
+
+
+<div class="container authenticated" style="display: none">
+    Token: <span id="token"></span> <br/>
+    Token type: <span id="token_type"></span> <br/>
+    Roles: <span id="roles"></span> <br/>
+    Profile url: <img id="profile_url"/> <br/>
+    Gender: <span id="gender"></span> <br/>
+    Locale: <span id="locale"></span> <br/>
+
+    Logged in as: <b><span id="user"></span></b>
+    <div>
+        <button onClick="logout()" class="btn btn-primary">Logout</button>
+    </div>
+</div>
+
+
+<div class="container drive">
+    <ul id="drive-list"></ul>
+    <div>
+        <button onClick="driveList()" class="btn btn-primary">LIST</button>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="/webjars/js-cookie/js.cookie.js"></script>
+<script type="text/javascript">
+    $.ajaxSetup({
+        beforeSend: function (xhr, settings) {
+            if (settings.type == 'POST' || settings.type == 'PUT'
+                || settings.type == 'DELETE') {
+                if (!(/^http:.*/.test(settings.url) || /^https:.*/
+                        .test(settings.url))) {
+                    // Only send the token to relative URLs i.e. locally.
+                    xhr.setRequestHeader("X-XSRF-TOKEN", Cookies.get('XSRF-TOKEN'));
+                }
+            }
+        }
+    });
+    $.get("/user", function (data) {
+        $("#user").html(data.name);
+        $("#token").html(data.token);
+        $("#token_type").html(data.token_type);
+        $("#roles").html(data.roles);
+        $("#profile_url").attr('src', data.profile_url);
+        $("#gender").html(data.gender);
+        $("#locale").html(data.locale);
+        $(".unauthenticated").hide();
+        $(".authenticated").show();
+    });
+    var logout = function () {
+        $.post("/logout", function () {
+            $("#user").html('');
+            $(".unauthenticated").show();
+            $(".authenticated").hide();
+        })
+        return true;
+    }
+
+    var driveList = function () {
+
+        $.get("/drive-list", function (data) {
+
+            var a = ["a", "b", "c"];
+            data.forEach(function (i) {
+                var sub_ul = $("#drive-list")
+                var sub_li = $('<li>' + i + '</li>').appendTo(sub_ul);
+            });
+        })
+        return true;
+    }
+</script>
+</body>
+</html>

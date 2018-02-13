@@ -1,9 +1,9 @@
 rootProject.name = 'spring-security'
 ////include 'cloud'
 ////include 'cloud:auth'
-//include 'google-sso:spring-boot-google-code'
-//include 'google-sso:spring-boot-google-code-enable-sso'
-//include 'google-sso:spring-boot-google-client-credentials'
+include 'google-sso:spring-boot-google-code'
+include 'google-sso:spring-boot-google-code-enable-sso'
+include 'google-sso:spring-boot-google-client-credentials'
 //
 ////-----------------------------------
 //include 'spring-sso:auth-server'

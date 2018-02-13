@@ -1,0 +1,13 @@
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-security'
+    compile 'org.springframework.security.oauth:spring-security-oauth2'
+
+
+    compile 'org.webjars:js-cookie:2.1.0'
+    compile 'org.webjars:jquery:2.1.1'
+    compile 'org.webjars:bootstrap:3.2.0'
+    compile 'org.webjars:webjars-locator:0.32'
+
+    compile libraries.test
+}
