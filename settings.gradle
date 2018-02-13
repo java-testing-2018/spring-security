@@ -1,0 +1,25 @@
+rootProject.name = 'spring-security'
+////include 'cloud'
+////include 'cloud:auth'
+//include 'google-sso:spring-boot-google-code'
+//include 'google-sso:spring-boot-google-code-enable-sso'
+//include 'google-sso:spring-boot-google-client-credentials'
+//
+////-----------------------------------
+//include 'spring-sso:auth-server'
+//include 'spring-sso:auth-server-jwt'
+//
+//include 'spring-sso:resource-server'
+////-----------------------------------
+//
+//include 'auth:api-basic'
+//include 'auth:web-basic'
+//
+//include 'auth:api-digest'
+//
+//include 'auth:web-x509'
+//
+//
+////include 'google-authserver:spring-boot-twitter-client-credentials'
+////include 'oauth:client-cred'
+//
